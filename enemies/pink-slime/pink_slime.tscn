@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cwr4o2p0g8ubw"]
+
+[ext_resource type="Texture2D" uid="uid://5y67wl0owq4x" path="res://assets/textures/pink-slime.png" id="1_7fp7q"]
+[ext_resource type="Script" uid="uid://7auycu0br7ya" path="res://enemies/pink-slime/pink_slime.gd" id="1_gc8mb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gc8mb"]
+radius = 95.131485
+
+[node name="PinkSlime" type="Area2D" unique_id=1710567246]
+script = ExtResource("1_gc8mb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489586863]
+texture = ExtResource("1_7fp7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1115136289]
+position = Vector2(1, 18)
+shape = SubResource("CircleShape2D_gc8mb")

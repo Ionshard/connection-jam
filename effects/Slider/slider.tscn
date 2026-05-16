@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d0pmtg31h0c7a"]
+
+[ext_resource type="Script" uid="uid://b1lh81yf71ena" path="res://effects/Slider/slider.gd" id="1_js3vv"]
+[ext_resource type="Texture2D" uid="uid://faxdk7rrldeo" path="res://assets/textures/blue-potion.png" id="2_d2rdy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcvsc"]
+radius = 40.0
+height = 136.0
+
+[node name="Slider" type="Marker2D" unique_id=1394030311]
+script = ExtResource("1_js3vv")
+
+[node name="Effect" type="Node2D" parent="." unique_id=2134795653]
+
+[node name="Sprite2D" type="Sprite2D" parent="Effect" unique_id=1218532872]
+texture = ExtResource("2_d2rdy")
+
+[node name="Area2D" type="Area2D" parent="Effect" unique_id=680973294]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Effect/Area2D" unique_id=1580302546]
+shape = SubResource("CapsuleShape2D_kcvsc")
+
+[connection signal="area_entered" from="Effect/Area2D" to="." method="_on_area_2d_area_entered"]
