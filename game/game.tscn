@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d0pmtg31h0c7a" path="res://effects/Slider/slider.tscn" id="1_l1rk1"]
 [ext_resource type="PackedScene" uid="uid://cwr4o2p0g8ubw" path="res://enemies/pink-slime/pink_slime.tscn" id="2_vasa2"]
+[ext_resource type="Script" uid="uid://bwfwt10oeeq24" path="res://scripts/mouse_anchor.gd" id="3_h7iqs"]
+[ext_resource type="Texture2D" uid="uid://wqgocwypkehq" path="res://icon.svg" id="4_dxrkv"]
+[ext_resource type="Script" uid="uid://bonyseaiuug47" path="res://spell_components/paths/orbit.gd" id="5_dxrkv"]
 
 [node name="Game" type="Node2D" unique_id=1093923852]
 
@@ -10,3 +13,29 @@ position = Vector2(572, 259)
 
 [node name="PinkSlime" parent="." unique_id=1710567246 instance=ExtResource("2_vasa2")]
 position = Vector2(203, 250)
+
+[node name="MouseAnchor" type="Node2D" parent="." unique_id=531003708]
+unique_name_in_owner = true
+script = ExtResource("3_h7iqs")
+metadata/_custom_type_script = "uid://bwfwt10oeeq24"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1139347122]
+position = Vector2(1061, 116)
+texture = ExtResource("4_dxrkv")
+
+[node name="Center" type="Marker2D" parent="." unique_id=781102081]
+position = Vector2(587, 344)
+
+[node name="Orbit" type="Node2D" parent="." unique_id=1553709029 node_paths=PackedStringArray("anchor")]
+script = ExtResource("5_dxrkv")
+radius = 200
+angularVelocity = 1.0
+anchor = NodePath("../Center")
+metadata/_custom_type_script = "uid://bonyseaiuug47"
+
+[node name="Orbit2" type="Node2D" parent="." unique_id=704368801 node_paths=PackedStringArray("anchor", "target")]
+script = ExtResource("5_dxrkv")
+angularVelocity = 20.0
+anchor = NodePath("../Orbit")
+target = NodePath("../Sprite2D")
+metadata/_custom_type_script = "uid://bonyseaiuug47"

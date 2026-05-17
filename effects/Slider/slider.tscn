@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0pmtg31h0c7a"]
 
 [ext_resource type="Script" uid="uid://b1lh81yf71ena" path="res://effects/Slider/slider.gd" id="1_js3vv"]
-[ext_resource type="Texture2D" uid="uid://faxdk7rrldeo" path="res://assets/textures/blue-potion.png" id="2_d2rdy"]
+[ext_resource type="Texture2D" uid="uid://cavcr5naolwhk" path="res://assets/textures/blue-potion.png" id="2_d2rdy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcvsc"]
 radius = 40.0
