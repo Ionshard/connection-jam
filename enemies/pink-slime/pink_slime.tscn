@@ -2,9 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://5y67wl0owq4x" path="res://assets/textures/pink-slime.png" id="1_7fp7q"]
 [ext_resource type="Script" uid="uid://7auycu0br7ya" path="res://enemies/pink-slime/pink_slime.gd" id="1_gc8mb"]
+[ext_resource type="Script" uid="uid://bstkksemi31hv" path="res://scripts/health_component.gd" id="3_idfys"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gc8mb"]
 radius = 95.131485
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idfys"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eok08"]
+bg_color = Color(0.18899995, 0.54, 0, 1)
 
 [node name="PinkSlime" type="Area2D" unique_id=1710567246]
 script = ExtResource("1_gc8mb")
@@ -15,3 +22,19 @@ texture = ExtResource("1_7fp7q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1115136289]
 position = Vector2(1, 18)
 shape = SubResource("CircleShape2D_gc8mb")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1611598446]
+script = ExtResource("3_idfys")
+metadata/_custom_type_script = "uid://bstkksemi31hv"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1658895483]
+offset_left = -50.0
+offset_top = -129.0
+offset_right = 54.0
+offset_bottom = -102.0
+theme_override_styles/background = SubResource("StyleBoxFlat_idfys")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eok08")
+show_percentage = false
+
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]
+[connection signal="health_depleated" from="HealthComponent" to="." method="_on_health_component_health_depleated"]

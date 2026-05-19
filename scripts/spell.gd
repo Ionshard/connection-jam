@@ -1,8 +1,6 @@
 extends Node
 class_name Spell
 
-@export var router: 
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
