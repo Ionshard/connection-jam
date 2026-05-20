@@ -8,8 +8,10 @@
 [node name="Game" type="Node2D" unique_id=1093923852]
 script = ExtResource("1_u5opy")
 
-[node name="PinkSlime" parent="." unique_id=1710567246 instance=ExtResource("2_vasa2")]
+[node name="PinkSlime" parent="." unique_id=1710567246 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
 position = Vector2(542, 566)
+scale = Vector2(0.445, 0.445)
+target = NodePath("../Center")
 
 [node name="MouseAnchor" type="Node2D" parent="." unique_id=531003708]
 unique_name_in_owner = true

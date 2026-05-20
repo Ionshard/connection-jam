@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://5y67wl0owq4x" path="res://assets/textures/pink-slime.png" id="1_7fp7q"]
 [ext_resource type="Script" uid="uid://7auycu0br7ya" path="res://enemies/pink-slime/pink_slime.gd" id="1_gc8mb"]
 [ext_resource type="Script" uid="uid://bstkksemi31hv" path="res://scripts/health_component.gd" id="3_idfys"]
+[ext_resource type="Script" uid="uid://bqdabatpsppfa" path="res://enemy_components/march.gd" id="4_eok08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gc8mb"]
 radius = 95.131485
@@ -35,6 +36,11 @@ offset_bottom = -102.0
 theme_override_styles/background = SubResource("StyleBoxFlat_idfys")
 theme_override_styles/fill = SubResource("StyleBoxFlat_eok08")
 show_percentage = false
+
+[node name="March" type="Node" parent="." unique_id=892313393 node_paths=PackedStringArray("node")]
+script = ExtResource("4_eok08")
+node = NodePath("..")
+metadata/_custom_type_script = "uid://bqdabatpsppfa"
 
 [connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="health_depleated" from="HealthComponent" to="." method="_on_health_component_health_depleated"]
