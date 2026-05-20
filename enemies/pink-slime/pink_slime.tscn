@@ -15,6 +15,7 @@ bg_color = Color(0.6, 0, 0, 1)
 bg_color = Color(0.18899995, 0.54, 0, 1)
 
 [node name="PinkSlime" type="Area2D" unique_id=1710567246]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_gc8mb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489586863]

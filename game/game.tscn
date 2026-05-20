@@ -4,23 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://cwr4o2p0g8ubw" path="res://enemies/pink-slime/pink_slime.tscn" id="2_vasa2"]
 [ext_resource type="Script" uid="uid://bwfwt10oeeq24" path="res://scripts/mouse_anchor.gd" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://blexager4uhpy" path="res://scenes/temp_spell/temp_spell.tscn" id="4_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://b5763k232dvsn" path="res://scenes/home/home.tscn" id="5_dxrkv"]
 
 [node name="Game" type="Node2D" unique_id=1093923852]
 script = ExtResource("1_u5opy")
-
-[node name="PinkSlime" parent="." unique_id=1710567246 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
-position = Vector2(542, 566)
-scale = Vector2(0.445, 0.445)
-target = NodePath("../Center")
 
 [node name="MouseAnchor" type="Node2D" parent="." unique_id=531003708]
 unique_name_in_owner = true
 script = ExtResource("3_h7iqs")
 metadata/_custom_type_script = "uid://bwfwt10oeeq24"
 
+[node name="Home" parent="." unique_id=1860118335 instance=ExtResource("5_dxrkv")]
+position = Vector2(576, 324)
+
+[node name="PinkSlime" parent="." unique_id=1710567246 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
+position = Vector2(542, 566)
+target = NodePath("../Home")
+
 [node name="TempSpell" parent="." unique_id=327627495 node_paths=PackedStringArray("anchor") instance=ExtResource("4_4fuuu")]
 position = Vector2(1061, 116)
-anchor = NodePath("../Center")
-
-[node name="Center" type="Marker2D" parent="." unique_id=781102081]
-position = Vector2(576, 324)
+anchor = NodePath("../Home")

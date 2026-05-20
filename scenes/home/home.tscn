@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b5763k232dvsn"]
+
+[ext_resource type="Texture2D" uid="uid://c4h02o7tk0mqw" path="res://assets/textures/cauldron.png" id="1_5q1ba"]
+[ext_resource type="Script" uid="uid://v3u862iv5pad" path="res://scenes/home/home.gd" id="1_uqaih"]
+[ext_resource type="Script" uid="uid://cluydxghh0b4y" path="res://scripts/damage_component.gd" id="3_vut6t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ng36q"]
+radius = 171.00293
+
+[node name="Home" type="Area2D" unique_id=1860118335]
+scale = Vector2(0.285, 0.285)
+script = ExtResource("1_uqaih")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1676731388]
+texture = ExtResource("1_5q1ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2040685745]
+shape = SubResource("CircleShape2D_ng36q")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=2087382110]
+script = ExtResource("3_vut6t")
+damage = 100
+metadata/_custom_type_script = "uid://cluydxghh0b4y"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
