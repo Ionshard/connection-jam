@@ -18,9 +18,9 @@ metadata/_custom_type_script = "uid://bwfwt10oeeq24"
 position = Vector2(576, 324)
 
 [node name="PinkSlime" parent="." unique_id=1710567246 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
-position = Vector2(542, 566)
+position = Vector2(774, 570)
 target = NodePath("../Home")
 
 [node name="TempSpell" parent="." unique_id=327627495 node_paths=PackedStringArray("anchor") instance=ExtResource("4_4fuuu")]
-position = Vector2(1061, 116)
+position = Vector2(989, 360)
 anchor = NodePath("../Home")

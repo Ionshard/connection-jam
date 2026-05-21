@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://cw7agkstn6vsf" path="res://scenes/temp_spell/temp_spell.gd" id="1_v1y4h"]
 [ext_resource type="Script" uid="uid://bonyseaiuug47" path="res://spell_components/paths/orbit.gd" id="2_01omh"]
 [ext_resource type="Texture2D" uid="uid://cavcr5naolwhk" path="res://assets/textures/blue-potion.png" id="3_v1y4h"]
-[ext_resource type="Script" uid="uid://cluydxghh0b4y" path="res://scripts/damage_component.gd" id="4_iiwc6"]
+[ext_resource type="Script" uid="uid://bp4vemws2miyq" path="res://spell_components/effects/damage.gd" id="4_iiwc6"]
+[ext_resource type="Script" uid="uid://bid3h61bvrw6b" path="res://scripts/spell.gd" id="5_01omh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5opy"]
 size = Vector2(38, 36)
@@ -18,12 +19,10 @@ radius = 200
 angularVelocity = 1.0
 metadata/_custom_type_script = "uid://bonyseaiuug47"
 
-[node name="Pivot Orbit" type="Node2D" parent="." unique_id=1417090818 node_paths=PackedStringArray("anchor", "target")]
+[node name="Pivot Orbit" type="Node2D" parent="." unique_id=1417090818]
 position = Vector2(-1061, -116)
 script = ExtResource("2_01omh")
 angularVelocity = 20.0
-anchor = NodePath("../Center Orbit")
-target = NodePath("..")
 metadata/_custom_type_script = "uid://bonyseaiuug47"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1731674016]
@@ -33,9 +32,16 @@ texture = ExtResource("3_v1y4h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008086037]
 shape = SubResource("RectangleShape2D_u5opy")
 
-[node name="DamageComponent" type="Node" parent="." unique_id=1461373171]
+[node name="Spell" type="Node" parent="." unique_id=846635710 node_paths=PackedStringArray("paths", "effects", "body")]
+script = ExtResource("5_01omh")
+paths = [NodePath("../Center Orbit"), NodePath("../Pivot Orbit")]
+effects = [NodePath("../Damage")]
+body = NodePath("..")
+metadata/_custom_type_script = "uid://bid3h61bvrw6b"
+
+[node name="Damage" type="Node" parent="." unique_id=664301089]
 script = ExtResource("4_iiwc6")
-damage = 10
-metadata/_custom_type_script = "uid://cluydxghh0b4y"
+damage = 25
+metadata/_custom_type_script = "uid://bp4vemws2miyq"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
