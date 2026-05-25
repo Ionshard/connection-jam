@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bwfwt10oeeq24" path="res://scripts/mouse_anchor.gd" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://blexager4uhpy" path="res://scenes/temp_spell/temp_spell.tscn" id="4_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://b5763k232dvsn" path="res://scenes/home/home.tscn" id="5_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://5ipoe8dxbili" path="res://scenes/craft_spell/craft_spell.tscn" id="6_dakft"]
 
 [node name="Game" type="Node2D" unique_id=1093923852]
 script = ExtResource("1_u5opy")
@@ -18,9 +19,31 @@ metadata/_custom_type_script = "uid://bwfwt10oeeq24"
 position = Vector2(576, 324)
 
 [node name="PinkSlime" parent="." unique_id=1710567246 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
-position = Vector2(774, 570)
+position = Vector2(147, 598)
 target = NodePath("../Home")
 
 [node name="TempSpell" parent="." unique_id=327627495 node_paths=PackedStringArray("anchor") instance=ExtResource("4_4fuuu")]
 position = Vector2(989, 360)
 anchor = NodePath("../Home")
+
+[node name="CraftSpell" parent="." unique_id=1651596687 instance=ExtResource("6_dakft")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PinkSlime2" parent="." unique_id=692110841 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
+position = Vector2(1099, 860)
+target = NodePath("../Home")
+
+[node name="PinkSlime3" parent="." unique_id=79132561 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
+position = Vector2(351, -197)
+target = NodePath("../Home")
+
+[node name="PinkSlime4" parent="." unique_id=1643301343 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
+position = Vector2(-431, 81.99988)
+target = NodePath("../Home")
+
+[node name="PinkSlime5" parent="." unique_id=539313852 node_paths=PackedStringArray("target") instance=ExtResource("2_vasa2")]
+position = Vector2(1055, -371.00003)
+target = NodePath("../Home")
+
+[connection signal="spell_crafted" from="CraftSpell" to="." method="_on_craft_spell_spell_crafted"]

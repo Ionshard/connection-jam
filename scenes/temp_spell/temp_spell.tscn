@@ -41,7 +41,7 @@ metadata/_custom_type_script = "uid://bid3h61bvrw6b"
 
 [node name="Damage" type="Node" parent="." unique_id=664301089]
 script = ExtResource("4_iiwc6")
-damage = 25
+damage = 35
 metadata/_custom_type_script = "uid://bp4vemws2miyq"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
